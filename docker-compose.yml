@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: mysql
+    ports:
+      - 3306:3306
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=qwer1595@!
+      - MYSQL_DATABASE=noname-school
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=qwer1595@!
+      - TZ=Asia/Seoul
+    networks:
+      - noname-networks
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
+
+networks:
+  noname-networks:
